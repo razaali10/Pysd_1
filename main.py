@@ -1,12 +1,17 @@
 
 from fastapi import FastAPI, UploadFile, File, HTTPException
-from fastapi.responses import JSONResponse
+from fastapi.responses import JSONResponse, FileResponse
+from fastapi.staticfiles import StaticFiles
 from pysd import read_vensim
 import uuid
 import os
 import pandas as pd
 
 app = FastAPI()
+
+# ✅ Mount /static so files like openapi.yaml can be accessed
+app.mount("/static", StaticFiles(directory="static"), name="static")
+
 models = {}
 
 @app.post("/model/upload")
@@ -35,3 +40,8 @@ async def run_model(modelId: str, params: dict = {}, returnColumns: list = []):
     if returnColumns:
         result_df = result_df[returnColumns]
     return JSONResponse(content=result_df.to_dict(orient="list"))
+
+# Optional: Redirect /openapi.yaml directly (for GPT plugin discovery)
+@app.get("/openapi.yaml", include_in_schema=False)
+async def get_openapi_spec():
+    return FileResponse("static/openapi.yaml", media_type="text/yaml")

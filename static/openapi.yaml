@@ -1,0 +1,45 @@
+
+openapi: 3.0.1
+info:
+  title: PySD GPT API
+  version: 1.0.0
+servers:
+  - url: https://pysd-gpt-rev1-4.onrender.com
+paths:
+  /model/upload:
+    post:
+      summary: Upload SD model
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+      responses:
+        "200":
+          description: Model uploaded
+  /model/run:
+    post:
+      summary: Run simulation
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                modelId:
+                  type: string
+                params:
+                  type: object
+                returnColumns:
+                  type: array
+                  items:
+                    type: string
+      responses:
+        "200":
+          description: Simulation results

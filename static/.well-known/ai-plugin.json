@@ -1,0 +1,16 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "PySD GPT API",
+  "name_for_model": "pysd_gpt",
+  "description_for_human": "Simulate system dynamics models and visualize results.",
+  "description_for_model": "Upload a model, run simulations, and analyze outputs using PySD.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "url": "https://pysd-gpt-rev1-4.onrender.com/openapi.yaml"
+  },
+  "logo_url": "https://pysd-gpt-rev1-4.onrender.com/logo.png",
+  "contact_email": "you@example.com",
+  "legal_info_url": "https://example.com/legal"
+}

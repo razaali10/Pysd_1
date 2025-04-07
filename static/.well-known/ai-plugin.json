@@ -1,16 +1,17 @@
 {
   "schema_version": "v1",
-  "name_for_human": "PySD GPT API",
-  "name_for_model": "pysd_gpt",
-  "description_for_human": "Simulate system dynamics models and visualize results.",
-  "description_for_model": "Upload a model, run simulations, and analyze outputs using PySD.",
+  "name_for_human": "PySD Simulator",
+  "name_for_model": "pysd_simulator",
+  "description_for_human": "Upload and simulate system dynamics models using PySD.",
+  "description_for_model": "Use this plugin to upload Vensim or XMILE models, run simulations, plot results, and generate diagrams.",
   "auth": {
     "type": "none"
   },
   "api": {
-    "url": "https://pysd-1.onrender.com/openapi.yaml"
+    "type": "openapi",
+    "url": "http://localhost:8000/static/openapi.yaml"
   },
-  "logo_url": "https://pysd-1.onrender.com/logo.png",
-  "contact_email": "you@example.com",
-  "legal_info_url": "https://example.com/legal"
+  "logo_url": "http://localhost:8000/static/logo.png",
+  "contact_email": "support@example.com",
+  "legal_info_url": "http://example.com/legal"
 }

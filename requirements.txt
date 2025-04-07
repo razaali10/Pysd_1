@@ -3,3 +3,7 @@ uvicorn
 pysd
 pandas
 python-multipart
+graphviz
+networkx
+networkx
+matplotlib

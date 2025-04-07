@@ -1,16 +1,13 @@
-
 openapi: 3.0.1
 info:
-  title: PySD GPT API
-  version: 1.0.0
-servers:
-  - url: https://pysd-1.onrender.com
+  title: PySD API
+  description: Run system dynamics simulations using PySD
+  version: "1.0"
 paths:
   /model/upload:
     post:
-      summary: Upload SD model
+      summary: Upload a Vensim or XMILE model
       requestBody:
-        required: true
         content:
           multipart/form-data:
             schema:
@@ -20,26 +17,31 @@ paths:
                   type: string
                   format: binary
       responses:
-        "200":
-          description: Model uploaded
-  /model/run:
+        '200':
+          description: Model uploaded successfully
+  /model/simulate:
     post:
       summary: Run simulation
       requestBody:
-        required: true
         content:
           application/json:
             schema:
-              type: object
-              properties:
-                modelId:
-                  type: string
-                params:
-                  type: object
-                returnColumns:
-                  type: array
-                  items:
-                    type: string
+              $ref: '#/components/schemas/RunModelRequest'
       responses:
-        "200":
-          description: Simulation results
+        '200':
+          description: Simulation result
+components:
+  schemas:
+    RunModelRequest:
+      type: object
+      properties:
+        modelId:
+          type: string
+        params:
+          type: object
+          additionalProperties:
+            type: number
+        returnColumns:
+          type: array
+          items:
+            type: string

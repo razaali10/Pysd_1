@@ -1,8 +1,15 @@
 openapi: 3.0.1
 info:
+<<<<<<< HEAD
   title: PySD API
   description: Run system dynamics simulations using PySD
   version: "1.0"
+=======
+  title: PySD GPT API
+  version: 1.0.0
+servers:
+  - url: https://pysd_1.onrender.com
+>>>>>>> e939146e74389f7ef3cd9043668171725ecdfcc5
 paths:
   /model/upload:
     post:

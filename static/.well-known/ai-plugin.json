@@ -8,6 +8,7 @@
     "type": "none"
   },
   "api": {
+<<<<<<< HEAD
     "type": "openapi",
     "url": "http://localhost:8000/static/openapi.yaml"
   },
@@ -15,3 +16,11 @@
   "contact_email": "support@example.com",
   "legal_info_url": "http://example.com/legal"
 }
+=======
+    "url": "https://pysd_1.onrender.com/openapi.yaml"
+  },
+  "logo_url": "https://pysd_1.onrender.com/logo.png",
+  "contact_email": "you@example.com",
+  "legal_info_url": "https://example.com/legal"
+}
+>>>>>>> e939146e74389f7ef3cd9043668171725ecdfcc5

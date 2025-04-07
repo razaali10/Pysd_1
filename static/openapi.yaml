@@ -4,7 +4,7 @@ info:
   title: PySD GPT API
   version: 1.0.0
 servers:
-  - url: https://pysd-1.onrender.com
+  - url: https://pysd_1.onrender.com
 paths:
   /model/upload:
     post:

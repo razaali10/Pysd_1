@@ -8,9 +8,9 @@
     "type": "none"
   },
   "api": {
-    "url": "https://pysd-1.onrender.com/openapi.yaml"
+    "url": "https://pysd_1.onrender.com/openapi.yaml"
   },
-  "logo_url": "https://pysd-1.onrender.com/logo.png",
+  "logo_url": "https://pysd_1.onrender.com/logo.png",
   "contact_email": "you@example.com",
   "legal_info_url": "https://example.com/legal"
 }
